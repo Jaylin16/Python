@@ -1,8 +1,8 @@
-print('python 기본 문법')
+print('python 기본')
 
 # '변수'는 어떠한 값의 메모리상 위치를 가리키는 것.
 # '자료형' 종류 1. 숫자형, 2. 문자형, 3. 리스트형, 4. 딕셔너리형
-
+# '기본 문법' 종류 5. 조건문, 6. 반복문, 7. 함수
 
 
 # 1. 숫자형
@@ -77,3 +77,76 @@ mix_dict['favorite'].append('블루베리')
 # 딕셔너리 내 특정 데이터 유무 확인
 print('수박' in mix_dict['favorite'])
 print('수박' in mix_dict)
+
+
+
+# 5. 조건문
+# 작성시 유의할 점
+# ':' 이후 들여쓰기가 있어야만 해당구간의 구문이 된다.
+money = 3000
+
+if money > 2500:
+    print('초코우유!')
+elif money > 1800:
+    print('딸기우유!')
+else:
+    print('바나나우유!')
+
+
+
+# 6. 반복문
+people = [
+    {'name': 'bob', 'age': 20},
+    {'name': 'carry', 'age': 38},
+    {'name': 'john', 'age': 7},
+    {'name': 'smith', 'age': 17},
+    {'name': 'ben', 'age': 27},
+    {'name': 'bobby', 'age': 57},
+    {'name': 'red', 'age': 32},
+    {'name': 'queen', 'age': 25}
+]
+
+for person in people:
+    name = person['name']
+    age = person['age']
+    if age > 20:
+        print(name, age)
+
+for i, person in enumerate(people):
+    name = person['name']
+    age = person['age']
+    print(i, name, age)
+    if i > 3:
+        break
+
+num_list = [1, 2, 3, 6, 3, 2, 4, 5, 6, 2, 4]
+max = 0
+
+for num in num_list:
+    if num > max:
+        max = num
+
+print(max)
+
+
+
+# 7. 함수
+def sum(a,b):
+    print('더하기 실행')
+    return a + b
+
+result = sum(1,2)
+print(result)
+
+# 형변환
+def check_gender(pin):
+    num = pin.split('-')[1][:1]
+    if int(num) % 2 == 0:
+        print('여자입니다.')
+    else:
+        print('남자입니다.')
+
+check_gender('120101-10101010')
+check_gender('120101-20101010')
+check_gender('120101-30101010')
+check_gender('120101-40101010')
